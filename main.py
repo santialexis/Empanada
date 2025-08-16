@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
 import requests
-import os
 import re
+import os
+import server
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -96,4 +97,5 @@ async def stands(ctx, *, stand: str):
 async def on_ready():
     print(f"{bot.user}")
 
+server.keep_alive()
 bot.run(TOKEN)
